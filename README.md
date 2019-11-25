@@ -4,18 +4,15 @@
 * Вариант 3. Добавляем параметр rw init=/sysroot/bin/sh     и жмем ctrl+X
 * Ставим систему с LVM с переименованием VG
 * Смотрим статус системы
-
-1. sudo su
-1. ll
-1. vgs
+sudo su
+ll
+vgs
 * Получили результат
-1.  VG         #PV #LV #SN Attr   VSize   VFree
-1. VolGroup00   1   2   0 wz--n- <38.97g    0
-
-* Переименуем VolGroup в MyGroup
+VG         #PV #LV #SN Attr   VSize   VFree
+VolGroup00   1   2   0 wz--n- <38.97g    0
+#Переименуем VolGroup в MyGroup
 vgrename VolGroup00 MyRoot
 Volume group "VolGroup00" successfully renamed to "MyRoot"
-
 #правим fstab, grub и grub 2
 #
 # /etc/fstab
@@ -27,10 +24,6 @@ Volume group "VolGroup00" successfully renamed to "MyRoot"
 /dev/mapper/MyRoot-LogVol00 /                       xfs     defaults        0 0
 UUID=570897ca-e759-4c81-90cf-389da6eee4cc /boot                   xfs     defaults        0 0
 /dev/mapper/MyRoot-LogVol01 swap                    swap    defaults        0 0
-
-
-
-
 GRUB_TIMEOUT=1
 GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
 GRUB_DEFAULT=saved
