@@ -4,7 +4,7 @@
 Вариант 3. Добавляем параметр rw init=/sysroot/bin/sh     и жмем ctrl+X
 * Ставим систему с LVM с переименованием VG и Смотрим статус системы:
 
-* vgs 
+*_vgs_* 
 
 * Получили результат:
 
@@ -12,10 +12,11 @@ _VG         #PV #LV #SN Attr   VSize   VFree
 VolGroup00   1   2   0 wz--n- <38.97g    0_
 
 * Переименуем VolGroup в MyGroup:
-* vgrename VolGroup00 MyRoot
+*_vgrename VolGroup00 MyRoot_*
 * Volume group "VolGroup00" successfully renamed to "MyRoot"
+
 * правим fstab, grub и grub 2:
-* /etc/fstab
+*_/etc/fstab_*
 * Created by anaconda on Sat May 12 18:50:26 2018
 * Accessible filesystems, by reference, are maintained under '/dev/disk'
 * See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
