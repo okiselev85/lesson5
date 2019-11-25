@@ -33,9 +33,10 @@ VolGroup00   1   2   0 wz--n- <38.97g    0_
 
 linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/MyRoot-LogVol00 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rd.lvm.lv=MyRoot/LogVol00 rd.lvm.lv=MyRoot/LogVol01 rhgb quiet
 
-#Пересоздаем initrd
+# Пересоздаем initrd:
 [root@lvm /]# mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
-Executing: /sbin/dracut -f -v /boot/initramfs-3.10.0-862.2.3.el7.x86_64.img 3.10.0-862.2.3.el7.x86_64
+
+_Executing: /sbin/dracut -f -v /boot/initramfs-3.10.0-862.2.3.el7.x86_64.img 3.10.0-862.2.3.el7.x86_64
 dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
 dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
 dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
@@ -88,10 +89,9 @@ Skipping udev rule: 91-permissions.rules
 *** Store current command line parameters ***
 *** Creating image file ***
 *** Creating image file done ***
-*** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
+*** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***_
 
-
-#Перезагружаемся и смотрим результат vgs
+* Перезагружаемся и смотрим результат vgs
 [vagrant@lvm ~]$ sudo su
 [root@lvm vagrant]# vgs
   VG     #PV #LV #SN Attr   VSize   VFree
