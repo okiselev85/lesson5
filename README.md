@@ -4,9 +4,9 @@
 * Вариант 3. Добавляем параметр rw init=/sysroot/bin/sh     и жмем ctrl+X
 * Ставим систему с LVM с переименованием VG
 * Смотрим статус системы
-> sudo su
-> ll
-> vgs
+sudo su ;
+ll ;
+vgs ;
 * Получили результат
 VG         #PV #LV #SN Attr   VSize   VFree
 VolGroup00   1   2   0 wz--n- <38.97g    0
