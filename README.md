@@ -33,7 +33,7 @@ VolGroup00   1   2   0 wz--n- <38.97g    0 *
 * GRUB_CMDLINE_LINUX="no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop  crashkernel=auto rd.lvm.lv=MyRoot/LogVol00 rd.lvm.lv=MyRoot/LogVol01 rhgb quiet"GRUB_DISABLE_RECOVERY="true"
 
 #### Теперь grub2, только измененная строка:
-* linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/MyRoot-LogVol00 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rd.lvm.lv=MyRoot/LogVol00 rd.lvm.lv=MyRoot/LogVol01 rhgb quiet * 
+* linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/MyRoot-LogVol00 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rd.lvm.lv=MyRoot/LogVol00 rd.lvm.lv=MyRoot/LogVol01 rhgb quiet  
 
 #### Пересоздаем initrd:
 *_mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)_*
@@ -44,7 +44,7 @@ VolGroup00   1   2   0 wz--n- <38.97g    0 *
 *_vgs_*
 
  * VG     #PV #LV #SN Attr   VSize   VFree
-  MyRoot   1   2   0 wz--n- <38.97g    0 *
+  MyRoot   1   2   0 wz--n- <38.97g    0 
 
 #### Добавляем модуль в initrd . Создаем папку mytest в  usr/lib/dracut/modules.d/   а так же кладем в нее необходимые скрипты c заранее известным содержимым:
 *_mkdir /usr/lib/dracut/modules.d/mytest_*
@@ -56,7 +56,7 @@ VolGroup00   1   2   0 wz--n- <38.97g    0 *
 
 * total 8
 -rw-r--r--. 1 root root 126 Nov 22 14:18 module-setup.sh
--rw-r--r--. 1 root root 314 Nov 22 14:19 test.sh *
+-rw-r--r--. 1 root root 314 Nov 22 14:19 test.sh 
 
 #### Пересобираем образ initrd, смотрим загруженные модули:
 
