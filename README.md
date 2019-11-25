@@ -10,8 +10,8 @@
 
 Получили результат:
 
-_VG         #PV #LV #SN Attr   VSize   VFree
-VolGroup00   1   2   0 wz--n- <38.97g    0_
+* VG         #PV #LV #SN Attr   VSize   VFree
+VolGroup00   1   2   0 wz--n- <38.97g    0 *
 
 #### Переименуем VolGroup в MyGroup:
 *_vgrename VolGroup00 MyRoot_*
