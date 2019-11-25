@@ -1,19 +1,20 @@
-* Проверяем варианты загрузки без пароля тремя способами. Каждое путем нажатия e  при загрузки ВМ вагрант через гуи
+# Проверяем варианты загрузки без пароля тремя способами. Каждое путем нажатия e  при загрузки ВМ вагрант через гуи
 * Вариант 1. Добавляем параметр init=/bin/sh     и жмем ctrl+X
 * Вариант 2. Добавляем параметр rd.break     и жмем ctrl+X.  Смена пароля в данном случае необязательна, сам факт проверки    работы такого варианта загрузки в аварийном режиме
 * Вариант 3. Добавляем параметр rw init=/sysroot/bin/sh     и жмем ctrl+X
 * Ставим систему с LVM с переименованием VG
 * Смотрим статус системы
+
 sudo su
 ll
 vgs
-#Получили результат
-VG         #PV #LV #SN Attr   VSize   VFree
+* Получили результат
+  VG         #PV #LV #SN Attr   VSize   VFree
   VolGroup00   1   2   0 wz--n- <38.97g    0
 
-#переименуем VolGroup в MyGroup
-[root@lvm vagrant]# vgrename VolGroup00 MyRoot
-  Volume group "VolGroup00" successfully renamed to "MyRoot"
+* Переименуем VolGroup в MyGroup
+vgrename VolGroup00 MyRoot
+Volume group "VolGroup00" successfully renamed to "MyRoot"
 
 #правим fstab, grub и grub 2
 #
