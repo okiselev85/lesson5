@@ -2,20 +2,20 @@
 #### 1. Добавляем параметр init=/bin/sh     и жмем ctrl+X
 #### 2. Добавляем параметр rd.break     и жмем ctrl+X.  Смена пароля в данном случае необязательна, сам факт проверки    работы такого варианта загрузки в аварийном режиме
 #### 3. Добавляем параметр rw init=/sysroot/bin/sh     и жмем ctrl+X
-* Ставим систему с LVM с переименованием VG и Смотрим статус системы:
+#### Ставим систему с LVM с переименованием VG и Смотрим статус системы:
 
 *_vgs_* 
 
-* Получили результат:
+Получили результат:
 
 _VG         #PV #LV #SN Attr   VSize   VFree
 VolGroup00   1   2   0 wz--n- <38.97g    0_
 
-* Переименуем VolGroup в MyGroup:
+#### Переименуем VolGroup в MyGroup:
 *_vgrename VolGroup00 MyRoot_*
 * Volume group "VolGroup00" successfully renamed to "MyRoot"
 
-* правим fstab, grub и grub 2:
+#### Правим fstab, grub и grub 2:
 *_ /etc/fstab _*
 
 * Created by anaconda on Sat May 12 18:50:26 2018
