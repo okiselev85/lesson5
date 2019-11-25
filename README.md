@@ -5,12 +5,12 @@
 * Ставим систему с LVM с переименованием VG
 * Смотрим статус системы
 
-sudo su
-ll
-vgs
+1. sudo su
+1. ll
+1. vgs
 * Получили результат
-  VG         #PV #LV #SN Attr   VSize   VFree
-  VolGroup00   1   2   0 wz--n- <38.97g    0
+1.  VG         #PV #LV #SN Attr   VSize   VFree
+1. VolGroup00   1   2   0 wz--n- <38.97g    0
 
 * Переименуем VolGroup в MyGroup
 vgrename VolGroup00 MyRoot
@@ -128,4 +128,4 @@ lsinitrd -m /boot/initramfs-$(uname -r).img | grep test
 vi grub.cfg 
 reboot
 
-#Пингвин на скриншоте во вложении
+* Пингвин на скриншоте во вложении
