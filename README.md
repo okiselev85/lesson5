@@ -38,30 +38,33 @@ VolGroup00   1   2   0 wz--n- <38.97g    0 *
 #### Пересоздаем initrd:
 *_mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)_*
 
-# Перезагружаемся и смотрим результат vgs
-[vagrant@lvm ~]$ sudo su
-[root@lvm vagrant]# vgs
-  VG     #PV #LV #SN Attr   VSize   VFree
-  MyRoot   1   2   0 wz--n- <38.97g    0
+#### Перезагружаемся и смотрим результат vgs:
 
-#Добавляем модуль в initrd
-#Создаем папку mytest в  usr/lib/dracut/modules.d/   а так же кладем в нее необходимые скрипты c заранее известным содержимым
-[root@lvm vagrant]# mkdir /usr/lib/dracut/modules.d/mytest
-[root@lvm vagrant]# cd /usr/lib/dracut/modules.d/
-[root@lvm modules.d]# cd mytest/
-[root@lvm mytest]# vi module-setup.sh
-[root@lvm mytest]# vi test.sh
-[root@lvm mytest]# ll
-total 8
+*_sudo su_*
+*_vgs_*
+
+ * VG     #PV #LV #SN Attr   VSize   VFree
+  MyRoot   1   2   0 wz--n- <38.97g    0 *
+
+#### Добавляем модуль в initrd . Создаем папку mytest в  usr/lib/dracut/modules.d/   а так же кладем в нее необходимые скрипты c заранее известным содержимым:
+*_mkdir /usr/lib/dracut/modules.d/mytest_*
+*_cd /usr/lib/dracut/modules.d/_*
+*_cd mytest/_*
+*_vi module-setup.sh_*
+*_vi test.sh_*
+*_ll_*
+
+* total 8
 -rw-r--r--. 1 root root 126 Nov 22 14:18 module-setup.sh
--rw-r--r--. 1 root root 314 Nov 22 14:19 test.sh
+-rw-r--r--. 1 root root 314 Nov 22 14:19 test.sh *
 
-#Пересобираем образ initrd, смотрим загруженные модули 
-dracut -f -v
-lsinitrd -m /boot/initramfs-$(uname -r).img | grep test
+#### Пересобираем образ initrd, смотрим загруженные модули:
 
-#Правим grub.cfg(убираем rghb quiet) и перезагружаемся
-vi grub.cfg 
-reboot
+*_dracut -f -v_*
+*_lsinitrd -m /boot/initramfs-$(uname -r).img | grep test_*
 
-* Пингвин на скриншоте во вложении
+#### Правим grub.cfg(убираем rghb quiet) и перезагружаемся:
+*_vi grub.cfg _*
+*_reboot_*
+
+### Пингвин на скриншоте во вложении
