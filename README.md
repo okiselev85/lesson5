@@ -18,7 +18,7 @@ VolGroup00   1   2   0 wz--n- <38.97g    0_
 * Volume group "VolGroup00" successfully renamed to "MyRoot"
 
 #### Правим fstab, grub и grub 2:
-*_ /etc/fstab _*
+*_/etc/fstab_*
 * Created by anaconda on Sat May 12 18:50:26 2018
 * Accessible filesystems, by reference, are maintained under '/dev/disk'
 * See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
